@@ -10,8 +10,8 @@ import 'Registro.dart';
 import 'Home.dart';
 import 'Transaction.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +21,10 @@ class MyApp extends StatelessWidget {
 
       // Definição das rotas do aplicativo
       routes: {
-        '/': (context) => const LoginPage(),
-        '/registro': (context) => const RegistroPage(),
-        '/home': (context) => const HomePage(),
-        '/transaction': (context) => const TransactionPage(),
+        '/': (context) => LoginPage(),
+        '/registro': (context) => RegistroPage(),
+        '/home': (context) => HomePage(),
+        '/transaction': (context) => TransactionPage(),
       },
 
       initialRoute: '/', // Define a primeira tela
