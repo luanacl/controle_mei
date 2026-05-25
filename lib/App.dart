@@ -1,9 +1,3 @@
-// ===============================
-// lib/App.dart
-// ===============================
-// Configuração geral do aplicativo
-// Define tema, rotas e tela inicial
-
 import 'package:flutter/material.dart';
 import 'Login.dart';
 import 'Registro.dart';
@@ -16,10 +10,9 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // Remove banner de debug
+      debugShowCheckedModeBanner: false,
       title: 'Controle MEI',
 
-      // Definição das rotas do aplicativo
       routes: {
         '/': (context) => LoginPage(),
         '/registro': (context) => RegistroPage(),
@@ -27,7 +20,7 @@ class App extends StatelessWidget {
         '/transaction': (context) => TransactionPage(),
       },
 
-      initialRoute: '/', // Define a primeira tela
+      initialRoute: '/',
     );
   }
 }

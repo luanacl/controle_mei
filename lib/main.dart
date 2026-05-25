@@ -1,8 +1,3 @@
-// ===============================
-// lib/main.dart
-// ===============================
-// Arquivo principal - responsável apenas por iniciar o app
-
 import 'package:flutter/material.dart';
 import 'App.dart';
 import 'package:firebase_core/firebase_core.dart';

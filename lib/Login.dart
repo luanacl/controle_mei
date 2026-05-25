@@ -1,8 +1,3 @@
-// ===============================
-// lib/Login.dart
-// ===============================
-// Tela de login do usuário
-
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -104,7 +99,7 @@ class LoginPage extends StatelessWidget {
                     email: txtEmail.text,
                     password: txtSenha.text,
                   );
-                  Navigator.pushReplacementNamed(context, "/lista");
+                  Navigator.pushReplacementNamed(context, "/home");
                 } on FirebaseAuthException catch (ex) {
                   final snackBar = SnackBar(
                     content: Text(ex.message!),
