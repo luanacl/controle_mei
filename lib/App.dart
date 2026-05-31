@@ -1,3 +1,4 @@
+import 'transaction_list_page.dart';
 import 'package:flutter/material.dart';
 import 'Login.dart';
 import 'Registro.dart';
@@ -18,6 +19,7 @@ class App extends StatelessWidget {
         '/registro': (context) => RegistroPage(),
         '/home': (context) => HomePage(),
         '/transaction': (context) => TransactionPage(),
+        "/transactions-list": (context) => TransactionListPage(),
       },
 
       initialRoute: '/',
