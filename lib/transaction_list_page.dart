@@ -88,8 +88,8 @@ class TransactionListPage extends StatelessWidget {
       context: context,
 
       builder: (context) {
-
-        return Wrap(
+        return SafeArea(
+        child: Wrap(
           children: [
 
             ListTile(
@@ -123,6 +123,7 @@ class TransactionListPage extends StatelessWidget {
               },
             ),
           ],
+        ),
         );
       },
     );

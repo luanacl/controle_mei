@@ -25,18 +25,21 @@ class LoginPage extends StatelessWidget {
         ),
       ),
 
-      body: Padding(
-        padding: const EdgeInsets.all(50),
+      body: SafeArea(
 
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(50),
 
-          children: [
-            Align(
-              alignment: Alignment.topCenter,
-              child: Image.asset('assets/images/logo.png', height: 200),
-            ),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    'assets/images/logo.png',
+                    height: 200,
+                  ),
+                ),
 
             const SizedBox(height: 30),
             // Texto de boas vindas
@@ -134,6 +137,7 @@ class LoginPage extends StatelessWidget {
             ),
           ],
         ),
+      ),
       ),
     );
   }

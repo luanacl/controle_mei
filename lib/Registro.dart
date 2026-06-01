@@ -7,19 +7,28 @@ class RegistroPage extends StatelessWidget {
   TextEditingController txtSenha = TextEditingController();
 
   Future registrar(BuildContext context) async {
-    var credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: txtEmail.text,
-      password: txtSenha.text,
-    );
+    try {
+      var credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: txtEmail.text,
+        password: txtSenha.text,
+      );
 
-    txtNome.clear();
-    txtEmail.clear();
-    txtSenha.clear();
+      txtNome.clear();
+      txtEmail.clear();
+      txtSenha.clear();
 
-    Navigator.of(context)
-      ..pop()
-      ..pushReplacementNamed('/home');
-  }
+      Navigator.of(context)
+        ..pop()
+        ..pushReplacementNamed('/home');
+    } on FirebaseAuthException catch (ex) {
+                  final snackBar = SnackBar(
+                    content: Text(ex.message!),
+                    backgroundColor: Colors.red,
+                    behavior: SnackBarBehavior.floating,
+                  );
+     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
+  } 
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +37,13 @@ class RegistroPage extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 17, 7, 128),
         toolbarHeight: 40,
         centerTitle: true,
+        // colocar a cor do icone back branco
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: const [
